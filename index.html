@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyCast - Weather Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <i data-lucide="cloud-sun" class="logo-icon"></i>
+        <h1>SkyCast</h1>
+      </div>
+      <div class="header-controls">
+        <div class="search-bar">
+          <i data-lucide="search" class="search-icon"></i>
+          <input type="text" id="search-input" placeholder="Search city...">
+        </div>
+        <button id="search-btn" class="primary-btn">Search</button>
+        <button id="location-btn" class="icon-text-btn">
+          <i data-lucide="map-pin"></i>
+          <span>Use My Location</span>
+        </button>
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
+          <i data-lucide="moon" id="theme-icon"></i>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Main Weather Card -->
+      <section class="main-card">
+        <div class="weather-info">
+          <h2 id="city-name">London, GB</h2>
+          <p id="date-time" class="text-secondary">Sunday, June 16 • 07:45 PM</p>
+          <div class="condition-container">
+            <p id="condition-text" class="condition-title">Cloudy</p>
+            <p id="weather-recommendation" class="highlight-text">Perfect weather for outdoor activities.</p>
+            <p id="weather-description" class="text-secondary">A bit gray and overcast today.</p>
+          </div>
+        </div>
+        <div class="weather-icon-container">
+          <img id="weather-icon" src="https://cdn.weatherapi.com/weather/64x64/day/116.png" alt="Weather condition icon">
+        </div>
+        <div class="temp-container">
+          <div class="temp-main">
+            <span id="temp-val">16</span><span class="temp-unit">°C</span>
+          </div>
+          <p id="feels-like" class="text-secondary">Feels like <span id="feels-like-val" class="highlight-val">15°C</span></p>
+          <div class="temp-range">
+            <span class="temp-high"><i data-lucide="arrow-up"></i> <span id="temp-high-val">18°C</span></span>
+            <span class="temp-low"><i data-lucide="arrow-down"></i> <span id="temp-low-val">12°C</span></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Air Conditions Section -->
+      <section class="air-conditions">
+        <h3>Air Conditions</h3>
+        <div class="conditions-grid">
+          <div class="condition-card">
+            <div class="card-icon-wrapper humidity-icon">
+              <i data-lucide="droplets"></i>
+            </div>
+            <div class="card-content">
+              <span class="card-label">Humidity</span>
+              <strong id="humidity-val">78%</strong>
+              <span id="humidity-desc" class="card-desc">Damp</span>
+            </div>
+          </div>
+
+          <div class="condition-card">
+            <div class="card-icon-wrapper wind-icon">
+              <i data-lucide="wind"></i>
+            </div>
+            <div class="card-content">
+              <span class="card-label">Wind Status</span>
+              <strong id="wind-val">4.6 m/s</strong>
+              <span id="wind-desc" class="card-desc">SSW</span>
+            </div>
+          </div>
+
+          <div class="condition-card">
+            <div class="card-icon-wrapper pressure-icon">
+              <i data-lucide="gauge"></i>
+            </div>
+            <div class="card-content">
+              <span class="card-label">Air Pressure</span>
+              <strong id="pressure-val">1014 hPa</strong>
+              <span id="pressure-desc" class="card-desc">Normal</span>
+            </div>
+          </div>
+
+          <div class="condition-card">
+            <div class="card-icon-wrapper uv-icon">
+              <i data-lucide="sun"></i>
+            </div>
+            <div class="card-content">
+              <span class="card-label">UV Index</span>
+              <strong id="uv-val">3</strong>
+              <span id="uv-desc" class="card-desc">Moderate</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="script.js"></script>
+</body>
+</html>
